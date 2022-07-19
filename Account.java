@@ -31,6 +31,10 @@ public abstract class Account {
 
 
     public void addBalance(int amount){
+        if(!isAmountPositive(amount)){
+            System.out.println("you can't add to your account negative amounts");
+            return;
+        }
         System.out.println("someone just added: " + amount);
          this.balance += amount;
     }
@@ -66,7 +70,7 @@ public abstract class Account {
 
     public void askCard(){
         if(getCardDelivered()){
-            System.out.println("Already have a carsd");
+            System.out.println("Already have a card");
             return;
         }
         cardDelivered = true;

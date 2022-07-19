@@ -41,4 +41,11 @@ public class Client {
     public void askCard(String accountType) {
        bank.askCard(id, accountType);
     }
+
+   @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                '}';
+    }
 }

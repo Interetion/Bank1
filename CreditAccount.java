@@ -18,10 +18,10 @@ public class CreditAccount extends Account{
             return;
         }
         if(getBalance()-amount - FEE < -100){
-            System.out.println("No more credit for you");
+
             return;
         }
-
+        System.out.println("No more credit for you");
         super.addBalance(-amount - FEE);
     }
 }

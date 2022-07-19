@@ -5,8 +5,10 @@ public class Bank {
     private int nextAccountIndex;
 
 
+
   public Bank(){
       accounts = new Account[10];
+
   }
 
     public Account getAccount(int idClient, String accountType){
@@ -14,8 +16,10 @@ public class Bank {
             if(account == null){
                 continue;
             }
-            if (account.getIdClient() == idClient && account.getAccountType() == accountType ){
+            if (account.getIdClient() == idClient && account.getAccountType()==accountType ){
+                System.out.println("you just open a account ");
                 return account;
+
             }
         }
        // System.out.println("No account matching query");
@@ -24,8 +28,8 @@ public class Bank {
     }
 
     public void addAccount(int idClient, String accountType){
-      if(getAccount(idClient,accountType)!= null){
-          System.out.println("Already have acc");
+      if(getAccount(idClient,accountType )!= null){
+          System.out.println("Already have account ");
           return;
       }
       switch (accountType){
@@ -67,4 +71,6 @@ public class Bank {
             tempAccount.askCard();
         }
     }
+
+
 }
